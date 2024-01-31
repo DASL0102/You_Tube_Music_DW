@@ -12,7 +12,7 @@ def music(enlace):
     name = "Song_"+ id +".mp3" 
     video = YouTube(enlace)
     descarga = video.streams.get_audio_only()
-    descarga.download(output_path='/home/usuario/Descargas', filename=name)
+    descarga.download(output_path='/home/dasl/Descargas', filename=name)
 
 def video(enlace):
     num = str(random.randint(0, 100))
@@ -22,7 +22,7 @@ def video(enlace):
     name = "Video"+ id +".mp4" 
     video = YouTube(enlace)
     descarga = video.streams.get_highest_resolution()
-    descarga.download(output_path='/home/usuario/Descargas', filename=name)
+    descarga.download(output_path='/home/dasl/Descargas', filename=name)
 
 
 
@@ -38,3 +38,6 @@ print("2) Descargar Audio\n")
 op = int(input("Ingrese opcion: "))
 
 if op == 1:
+    video(enlace)
+elif op == 2:
+    music(enlace)    
